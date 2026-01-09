@@ -24,3 +24,9 @@ This application helps users add tasks with date & time, view them in a timeline
 
 ---
 
+## 🖼️ Project Preview
+
+<p style="align: center">
+  <img src="task.png" width="900" alt="Expense Tracker Preview">
+</p>
+
