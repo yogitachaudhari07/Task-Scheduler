@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, sans-serif;
+}
+body{
+    background-color: rgb(178, 178, 236);
+    padding:20px;
+}
+.main-container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-areas:
+        "addtask mytask calender"
+        "addtask mytask calender"
+        "addtask mytask notes";
+    gap:20px;            
+}
+.main-container > div{
+    background:#fff;
+    padding:15px;
+    border-radius:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+.add-task{ grid-area:addtask; }
+.my-task{ grid-area:mytask; }
+.calender{ grid-area:calender; }
+.notes{ grid-area:notes; }
+input, button, textarea{
+   width:100%;
+   padding:8px;
+   margin:6px 0;
+}
+h1{
+    margin-bottom: 1rem;
+}
+button{
+  background:#4f46e5;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+.timeline{
+  position:relative;
+  padding-left:25px;
+  margin-top:10px;
+}
+.timeline::before{
+   content:"";
+   position:absolute;
+   left:8px;
+   top:0;
+    bottom:0;
+   width:2px;
+   background:#c7d2fe;
+}
+.task-item{
+  position:relative;
+  background:#eef2ff;
+  padding:10px;
+  border-radius:10px;
+  margin-bottom:12px;
+  cursor:pointer;
+}
+.task-item::before{
+  content:"";
+  position:absolute;
+  left:-18px;
+  top:14px;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#4f46e5;
+}
+.task-item.done{
+  text-decoration:line-through;
+  opacity:0.6;
+}
+.calendar-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.weeks, .days{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  list-style:none;
+  margin-top:10px;
+}
+.days li{
+  padding:8px;
+  text-align:center;
+  border-radius:50%;
+  cursor:pointer;
+}
+.days li:hover{
+  background:#e0e7ff;
+}
+.today{
+  background:#4f46e5;
+  color:white;
+}
+#days li small {
+  display: block;
+  margin-top: 4px;
+  padding: 2px 4px;
+  font-size: 11px;
+  color: #2563eb;          
+  background: #e0ecff;     
+  border-radius: 4px;
+}
+.calendar-header button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 14px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #1e3a8a;
+  border: none;
+  cursor: pointer;
+}
+textarea{
+  height: 80%;
+}
+@media (max-width: 600px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "addtask"
+      "mytask"
+      "calender"
+      "notes";
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .calendar-header h3 {
+    font-size: 16px;
+  }
+
+  .calendar-header button {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .main-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "addtask mytask"
+      "calender calender"
+      "notes notes";
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}

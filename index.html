@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Task Management System</h1>
+
+<div class="main-container">
+
+  <!-- ADD TASK -->
+  <div class="add-task">
+    <h3>Add Task</h3>
+    <input type="text" id="task" placeholder="Task name">
+    <input type="date" id="date">
+    <input type="time" id="time">
+    <button>Add Task</button>
+  </div>
+
+  <!-- MY TASKS -->
+  <div class="my-task">
+    <h3>My Tasks (Timeline)</h3>
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="calender">
+  <div class="calendar-header">
+    <button id="prev">◀</button>
+    <h3 id="month"></h3>
+    <button id="next">▶</button>
+  </div>
+
+  <ul class="weeks">
+    <li>Sun</li><li>Mon</li><li>Tue</li><li>Wed</li>
+    <li>Thu</li><li>Fri</li><li>Sat</li>
+  </ul>
+
+  <ul class="days" id="days"></ul>
+</div>
+
+  <!-- NOTES -->
+  <div class="notes">
+    <h3>Notes</h3>
+    <textarea rows="6" placeholder="Write notes here..."></textarea>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
